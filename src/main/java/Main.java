@@ -30,6 +30,8 @@ public class Main {
          * Anders verhält sich der logische Bitverschiebungsoperator, welcher grundsätzlich mit Nullen auffüllt.
          */
 
+        parseIntFromBinary("10000001");
+
     }
 
 
@@ -42,6 +44,18 @@ public class Main {
             comp = comp << 1;
         }
         System.out.println(val);
+    }
+
+
+
+    public static void parseIntFromBinary(String binaryString){
+        int res = 0;
+        int act = 1;
+        for (int i = binaryString.length()-1; i >= 0; i--){
+            if(binaryString.charAt(i) == '1') res = res | act;
+            act = act << 1;
+        }
+        System.out.println(res);
     }
 
 }
